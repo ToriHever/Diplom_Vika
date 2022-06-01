@@ -23,7 +23,8 @@ nav, footer, header, aside {
 }
 
 html, body {
-    background-color: #e3dcd5;
+    background: url(/src/assets/main-bground.png) 100% center repeat;
+//    background-color: #e3dcd5;
     height: 100%;
     width: 100%;
     -ms-text-size-adjust: 100%;

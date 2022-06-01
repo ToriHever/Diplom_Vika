@@ -1,89 +1,76 @@
-$color-1: rgb(72, 27, 104, 1);
-$color-2: rgb(225, 218, 211, 1);
-$color-1: rgb(72, 27, 104, 1);
-$color-1: rgb(72, 27, 104, 1);
-%lightblock{
+@import './global/colors';
 
-}
-
-%violetBlock{
+%violetBlock {
     background: url(/src/assets/bgraund.png) center no-repeat;
     color: #e2dbd4;
 }
 
-%buttonBorder{
+%buttonBorder {
     border: 2px solid $color-1;
     border-radius: 100px;
     padding: 10px 20px;
     background-color: transparent;
-}%buttonColor{
+}
+
+%buttonColor {
     border-radius: 100px;
     padding: 20px 50px;
-    background-color:$color-1;
-    box-shadow: 0px 0px 30px 2px rgb(72, 27, 104, 0.7);
-
-    .link-curses{
-         color: $color-2;
-    }
-}
-%row{
-    display: flex;
-    flex-direction: row;
-}
-.header{
-    margin: 20px 0;
-}
-.container{
-    max-width: 1920px;
-    margin: 0 100px;
+    background-color: $color-1;
+    box-shadow: 0px 0px 30px 2px $color-shadow;
+    color: $color-2;
 }
 
-.header__content, .nav-list, .namder{
+.header__content, .nav-list, .header__numder {
     @extend %row;
     justify-content: space-between;
     align-items: center;
 
-    .nav-list li{
-       margin: 0 10px;
+    .nav-list a {
+        margin: 0 10px;
 
     }
-    .namder p{
-        margin: 0 20px;
+
+    .header__numder a {
+        margin: 0 10px;
+        font-size: 11pt;
     }
-     button{
-       @extend %buttonBorder;
+
+    .button-call {
+        @extend %buttonBorder;
     }
 }
 
-.main__content{
-    @extend %row;
-    margin-top: 100px;
-    justify-content: space-between;
-    align-items: center;
-
-    .main__text{
-        width: 50%;
-
-        .main__title{
-            position: relative;
-            font-size: 20pt;
-            z-index: 2;
-        }
-        .main__subtitle{
-             width:55%;
-             margin: 50px 0;
-        }
-        .slogan p{
-            font-size: 16pt;
-            font-weight: 600;
-        }
-
-        button{
-            @extend %buttonColor;
-        }
+.section-info {
+    &__content {
+        @extend %row;
+        padding-top: 100px;
+        justify-content: space-between;
+        align-items: center;
     }
-    .main__picture img{
+
+    &__title {
+        position: relative;
+        font-size: 20pt;
+        z-index: 2;
+    }
+
+    &__subtitle {
+        width: 55%;
+        margin: 50px 0;
+    }
+
+    .slogan p {
+        font-size: 16pt;
+        font-weight: 600;
+    }
+
+    .link-curses {
+        @extend %buttonColor;
+    }
+
+    &__picture img {
         float: right;
-        width:80%;
+        width: 80%;
     }
 }
+

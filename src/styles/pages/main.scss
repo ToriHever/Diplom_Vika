@@ -1,12 +1,44 @@
-h2 {
-  color: green;
+%lightblock{
+
 }
 
-img {
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: -1;
-  width: 100vw;
-  height: 100vh;
+%violetBlock{
+    background: url(/src/assets/bgraund.png) center no-repeat;
+    color: #e2dbd4;
+}
+
+%buttonBorder{
+    border: 1px solid #39313C;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: transparent;
+}%buttonColor{
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #39313C;
+}
+
+.header{
+    margin: 20px 0;
+}
+.container{
+    max-width: 1920px;
+}
+
+.header__content, .nav-list, .namder{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    .nav-list li{
+       margin: 0 10px;
+
+    }
+    .namder p{
+        margin: 0 10px;
+    }
+     button{
+       @extend %buttonBorder;
+    }
 }

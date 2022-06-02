@@ -1,74 +1,5 @@
 @import '../global/colors';
-//Mixin________________________________________________
-
-%violetBlock {
-    background: $violet-darck ;
-        h2, h3, h4, h5, h6,a, p, li, ul{
-            color: $light;
-    }
-}
-
-%buttonBorder {
-    border: 2px solid $violet;
-    border-radius: 100px;
-    padding: 10px 20px;
-    background-color: transparent;
-    color: $violet;
-}
-
-%buttonColor {
-    border: 2px solid $violet;
-    border-radius: 100px;
-    padding: 10px 20px;
-    background-color: $violet;
-    box-shadow: 0px 0px 30px 2px $color-shadow;
-    color: $light;
-    transition: .3s;
-}
-
-%row {
-    display: flex;
-    flex-direction: row;
-}
-
-%column {
-    display: flex;
-    flex-direction: column;
-}
-%headerDecorB{
-   &::before {
-        position: absolute;
-        top: 34px;
-        content: "";
-        background: $violet-light2;
-        width: 100%;
-        height: 9px;
-        z-index: -1;
-    }
-}
-%headerDecorA{
-    &::after {
-        position: absolute;
-        left: 0;
-        bottom: 23px;
-        content: "";
-        background: $violet-light2;
-        width: 100%;
-        height: 9px;
-        z-index: -1;
-    }
-    }
-  .head {
-      @extend %headerDecorB;
-        font-size: 26pt;
-        display: inline;
-        position: relative;
-        z-index: 2;
-        margin-right: 15px;
-    }
-$WBold: 600;
-
-//______________________________________________________
+@import '../global/helpers';
 
 .head1::before{
     position: absolute;
@@ -221,51 +152,54 @@ $WBold: 600;
 
 .section-new{
     @extend %violetBlock;
-    &__content{
-       padding: 90px 0;
+    padding: 70px;
 
+    .section-advice{
+        padding-bottom: 50px;
 
-        &__advice{
-            @extend %row;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 50px;
-
-            p{
-                margin: 0 10px 0 0;
-                opacity: 70%;
-            }
-
-            .advice__block{
-                width: 400px;
-
-                &-title{
-                    font-weight: $WBold;
-                    opacity: 100%;
-                    padding-bottom: 20px;
-                }
-            }
+        &__block-text{
+            opacity: 70%;
         }
     }
-    .news__content {
-        @extend %row;
+    &__wrapper{
         background: $violet-light;
+        @extend %row;
+        height: 400px;
 
-        &__info {
-            padding: 40px;
+        &__info{
+            overflow-y: scroll;
+            margin: 30px;
+            &-text{
 
-            & p{
-                padding-bottom: 20px;
             }
         }
+
 
         &__picture {
             @extend %row;
 
-            & img {
+            & img{
                 width: 300px;
-                height: auto;
+                height: 400px;
+            }
+        }
+    }
+    .paragraph{
+        padding-bottom: 10px;
+    }
 
+
+    .section-advice{
+        @extend %row;
+        justify-content: space-between;
+        align-items: center;
+
+        &__block{
+            width:300px;
+            margin: 0 10px;
+
+            &-title{
+               @extend %pBold;
             }
         }
     }

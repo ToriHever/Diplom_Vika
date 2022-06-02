@@ -17,24 +17,15 @@ const PATH = {
     },
 };
 
-const processPathToValid = (obj, el, ext) => {
-    ext = ext.replace('.', '');
-    const { name, dir } = path.parse(el)
-    const pathToFile = dir.substr(dir.indexOf(PATH.dev.scripts) + PATH.dev.scripts.length).replace('/', '').replace(ext, '');
-    return `${pathToFile}/${name}`;
-};
-
 const PATH_DEV = path.resolve(__dirname, PATH.dev.source);
 const PATH_PUB = path.resolve(__dirname, PATH.pub.source);
 
 const config = {
-    entry: glob.sync(PATH_DEV + '/**/*.js').reduce((obj, el) => {
-        if (path.parse(el).name.includes('.service') || path.parse(el).name.includes('.util')) return obj;
-        return {
-            ...obj,
-            [processPathToValid(obj, el, path.parse(el).ext)]: el
-        };
-    }, {}),
+    entry: {
+        'js/App': './src/js/App.js',
+        'js/pages/main': './src/js/pages/main.js',
+        'js/pages/about': './src/js/pages/about.js',
+    },
     mode: 'development',
     devServer: {
         static: PATH_PUB,
@@ -74,10 +65,6 @@ const config = {
                                 },
                             ],
                         ],
-                        plugins: [
-                            '@babel/plugin-proposal-class-properties',
-                            ['@babel/plugin-transform-runtime', {'regenerator': true}],
-                        ],
                     },
                 },
             },
@@ -91,7 +78,7 @@ const config = {
         ]
     },
     output: {
-        path: path.resolve(__dirname, PATH.pub.scripts),
+        path: path.resolve(__dirname, 'dist'),
         filename: '[name].js',
         publicPath: './',
     },

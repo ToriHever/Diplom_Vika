@@ -149,35 +149,71 @@
     }
 }
 
-.section-new{
+.section-new {
     @extend %violetBlock;
     padding: 50px 0;
 
-    .section-advice{
+    .section-advice {
         padding-bottom: 50px;
+        @extend %row;
+        justify-content: space-between;
+        align-items: center;
 
-        &__block-text{
+        &__block {
+            max-width: 300px;
+            width: 100%;
+            margin: 0 10px;
+
+            &-title {
+                @extend %pBold;
+            }
+        }
+
+        &__block-text {
             opacity: 70%;
         }
     }
-    &__wrapper{
+
+    &__wrapper {
         background: $violet-light;
         @extend %row;
         height: 100wh;
         max-height: 400px;
 
-        &__info{
+        &__info {
             overflow-y: scroll;
             margin: 40px;
             padding: 0 10px 0 0;
 
-            &__avtor{
+            &__avtor {
+                min-width:300px;
                 @extend %row;
-                align-items: center;
+                align-content: center;
 
-                .avtor__img{
-                    width: 50px;
-                    height: 50px;
+                .avtor__img {
+                    max-width: 70px;
+                    max-height: 70px;
+                    margin: 0px 20px 30px 0;
+                    overflow: hidden;
+                    border-radius: 100%;
+                    border: 2px solid $light;
+                    padding: 3px;
+
+                    & img {
+                        border-radius: 100%;
+                        width: 100%;
+                        height: 100%;
+                        object-position: top;
+                        object-fit: cover;
+                    }
+                }
+
+                .name {
+                    @extend %pBold;
+                    padding-bottom: 10px;
+                }
+                .status{
+                    opacity: 70%;
                 }
             }
         }
@@ -187,34 +223,19 @@
             @extend %row;
             min-width: 200px;
             width: 100%;
-            max-height: 100vh;
-            & img{
-              object-fit: cover;
-              width: 100%;
-              height: 100%;
+            max-height: 100%;
+
+            & img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
             }
         }
 
 
     }
-    .paragraph{
+
+    .paragraph {
         padding-bottom: 10px;
-    }
-
-
-    .section-advice{
-        @extend %row;
-        justify-content: space-between;
-        align-items: center;
-
-        &__block{
-            max-width: 300px;
-            width:100%;
-            margin: 0 10px;
-
-            &-title{
-               @extend %pBold;
-            }
-        }
     }
 }

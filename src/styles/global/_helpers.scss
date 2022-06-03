@@ -41,7 +41,7 @@ $WBold: 600;
         position: absolute;
         top: 34px;
         content: "";
-        background: $violet-light2;
+        background: $violet-light4;
         width: 100%;
         height: 9px;
         z-index: -1;
@@ -53,7 +53,7 @@ $WBold: 600;
         left: 0;
         bottom: 23px;
         content: "";
-        background: $violet-light2;
+        background: $violet-light4;
         width: 100%;
         height: 9px;
         z-index: -1;
@@ -72,6 +72,29 @@ $WBold: 600;
     font-size: 16pt;
     padding-bottom: 15px;
 }
+%buttonCall{
+    padding: 10px 40px;
+    @extend %buttonColor;
+    .button-call__img2{
+             visibility: visible;
+
+         }
+     &:hover {
+         @extend %buttonBorder;
+         padding: 10px 40px;
+
+         .button-call__img2{
+             visibility: hidden;
+
+         }
+
+         .button-call__img1 {
+             visibility: visible;
+
+         }
+
+     }
+     }
 .header {
     padding: 20px 0;
 }
@@ -80,6 +103,38 @@ $WBold: 600;
     max-width: 1920px;
     margin: 0 100px;
 }
+.paragraph {
+        padding-bottom: 10px;
+}
+.button-call2{
+    @extend %buttonCall;
+}
+.button-call {
+        @extend %buttonBorder;
+        &__img1{
+            position: relative;
+            width: 15px;
+            margin-right: 10px;
+        }
+        &__img2{
+            position: absolute;
+            visibility: hidden;
+            transform: translateX(-30px);
+            width: 15px;
+            margin-right: 10px;
+        }
+         &:hover {
+             @extend %buttonColor;
+             .button-call__img1 {
+                 visibility: hidden;
+                 transition: .7s;
+             }
+             .button-call__img2{
+                 visibility: visible;
+                 transition: .7s;
+             }
+         }
+    }
 @mixin scrollbars($size, $foreground-color, $background-color: mix($violet-light, white, 50%)) {
   ::-webkit-scrollbar {
       width:  $size;
@@ -89,7 +144,7 @@ $WBold: 600;
   ::-webkit-scrollbar-thumb {
       border-radius: 10px;
       width: 5px;
-      background: $violet-light2;
+      background: $violet-light4;
   }
 
   ::-webkit-scrollbar-track {

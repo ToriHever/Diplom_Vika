@@ -89,9 +89,9 @@
 
     .link-curses {
         padding: 20px 40px;
-        @extend %buttonColor;
+        @extend %button-color;
         &:hover{
-           @extend  %buttonBorder;
+           @extend  %button-border;
             padding: 20px 40px;
             transition: .3s;
         }
@@ -122,7 +122,7 @@
 }
 
 .section-new {
-    @extend %violetBlock;
+    @extend %violetSection;
     padding: 50px 0;
 
     .section-advice {

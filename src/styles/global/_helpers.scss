@@ -1,31 +1,6 @@
-
 @import "./colors";
 $WBold: 600;
-
-%violetBlock {
-    background: $violet-darck ;
-        h2, h3, h4, h5, h6,a, p, li, ul{
-            color: $light;
-    }
-}
-
-%buttonBorder {
-    border: 2px solid $violet;
-    border-radius: 100px;
-    padding: 10px 20px;
-    background-color: transparent;
-    color: $violet;
-}
-
-%buttonColor {
-    border: 2px solid $violet;
-    border-radius: 100px;
-    padding: 10px 20px;
-    background-color: $violet;
-    box-shadow: 0px 0px 30px 2px $color-shadow;
-    color: $light;
-    transition: .3s;
-}
+//Flex
 
 %row {
     display: flex;
@@ -36,8 +11,134 @@ $WBold: 600;
     display: flex;
     flex-direction: column;
 }
-%headerDecorB{
-   &::before {
+
+//***********************************************
+
+
+//Color-section
+
+%violetSection {
+    background: $violet-darck;
+
+    h2, h3, h4, h5, h6, a, p, li, ul {
+        color: $light;
+    }
+}
+
+//***********************************************
+
+//style-button
+
+%button-border {
+    border: 2px solid $violet;
+    border-radius: 100px;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: $violet;
+}
+
+%button-color {
+    border: 2px solid $violet;
+    border-radius: 100px;
+    padding: 10px 20px;
+    background-color: $violet;
+    box-shadow: 0px 0px 30px 2px $color-shadow;
+    color: $light;
+    transition: .3s;
+}
+
+%button_call-border {
+    border: 2px solid $violet;
+    border-radius: 100px;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: $violet;
+
+    .icon-phone_border {
+        visibility: visible;
+        position: relative;
+        width: 15px;
+        margin-right: 10px;
+    }
+
+    .icon-phone_color {
+        position: absolute;
+        visibility: hidden;
+        transform: translateX(-30px);
+        width: 15px;
+        margin-right: 10px;
+    }
+
+    &:hover {
+        @extend %button-color;
+
+        .icon-phone_color {
+            visibility: visible;
+
+        }
+
+        .icon-phone_border {
+            visibility: hidden;
+
+        }
+    }
+}
+
+%button_call-color {
+    position: relative;
+    border: 2px solid $violet;
+    border-radius: 100px;
+    padding: 10px 20px;
+    background-color: $violet;
+    box-shadow: 0px 0px 30px 2px $color-shadow;
+    color: $light;
+    transition: .3s;
+
+    .icon-phone_border {
+        visibility: hidden;
+        position: relative;
+        width: 15px;
+        margin-right: 10px;
+    }
+
+    .icon-phone_color {
+        position: absolute;
+        visibility: visible;
+        transform: translateX(-30px);
+        width: 15px;
+        margin-right: 10px;
+    }
+
+    &:hover {
+        @extend %button-border;
+
+        .icon-phone_color {
+            visibility: hidden;
+
+        }
+
+        .icon-phone_border {
+            visibility: visible;
+
+        }
+
+    }
+}
+
+.button_call-color {
+    @extend %button_call-color;
+}
+
+.button_call-border {
+    @extend %button_call-border;
+
+}
+
+//***********************************************
+
+
+%headerDecorB {
+    &::before {
         position: absolute;
         top: 34px;
         content: "";
@@ -47,7 +148,8 @@ $WBold: 600;
         z-index: -1;
     }
 }
-%headerDecorA{
+
+%headerDecorA {
     &::after {
         position: absolute;
         left: 0;
@@ -58,43 +160,23 @@ $WBold: 600;
         height: 9px;
         z-index: -1;
     }
-    }
-  .head {
-      @extend %headerDecorB;
-        font-size: 26pt;
-        display: inline;
-        position: relative;
-        z-index: 2;
-        margin-right: 15px;
-    }
-%pBold{
+}
+
+.head {
+    @extend %headerDecorB;
+    font-size: 26pt;
+    display: inline;
+    position: relative;
+    z-index: 2;
+    margin-right: 15px;
+}
+
+%pBold {
     font-weight: $WBold;
     font-size: 16pt;
     padding-bottom: 15px;
 }
-%buttonCall{
-    padding: 10px 40px;
-    @extend %buttonColor;
-    .button-call__img2{
-             visibility: visible;
 
-         }
-     &:hover {
-         @extend %buttonBorder;
-         padding: 10px 40px;
-
-         .button-call__img2{
-             visibility: hidden;
-
-         }
-
-         .button-call__img1 {
-             visibility: visible;
-
-         }
-
-     }
-     }
 .header {
     padding: 20px 0;
 }
@@ -103,60 +185,32 @@ $WBold: 600;
     max-width: 1920px;
     margin: 0 100px;
 }
+
 .paragraph {
-        padding-bottom: 10px;
+    padding-bottom: 10px;
 }
-.button-call2{
-    @extend %buttonCall;
-}
-.button-call {
-        @extend %buttonBorder;
-        &__img1{
-            position: relative;
-            width: 15px;
-            margin-right: 10px;
-        }
-        &__img2{
-            position: absolute;
-            visibility: hidden;
-            transform: translateX(-30px);
-            width: 15px;
-            margin-right: 10px;
-        }
-         &:hover {
-             @extend %buttonColor;
-             .button-call__img1 {
-                 visibility: hidden;
-                 transition: .7s;
-             }
-             .button-call__img2{
-                 visibility: visible;
-                 transition: .7s;
-             }
-         }
-    }
+
 @mixin scrollbars($size, $foreground-color, $background-color: mix($violet-light, white, 50%)) {
-  ::-webkit-scrollbar {
-      width:  $size;
-      height: $size;
-  }
+    ::-webkit-scrollbar {
+        width: $size;
+        height: $size;
+    }
 
-  ::-webkit-scrollbar-thumb {
-      border-radius: 10px;
-      width: 5px;
-      background: $violet-light4;
-  }
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        width: 5px;
+        background: $violet-light4;
+    }
 
-  ::-webkit-scrollbar-track {
-      background: $violet-light;
-  }
+    ::-webkit-scrollbar-track {
+        background: $violet-light;
+    }
 
-  // For Internet Explorer
-  body {
-    scrollbar-face-color: $violet;
-    scrollbar-track-color: $violet-light;
-  }
+    // For Internet Explorer
+    body {
+        scrollbar-face-color: $violet;
+        scrollbar-track-color: $violet-light;
+    }
 }
 
 @include scrollbars(.2em, slategray);
-

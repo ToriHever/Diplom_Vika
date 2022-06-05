@@ -1,5 +1,6 @@
 @import "./colors";
 $WBold: 600;
+$Opaciti: .5;
 //Flex
 
 %row {
@@ -140,43 +141,46 @@ $WBold: 600;
 %headerDecorB {
     &::before {
         position: absolute;
-        top: 34px;
         content: "";
         background: $violet-light4;
         width: 100%;
-        height: 9px;
-        z-index: -1;
+        height: 7px;
+        transform: translateY(33px);
     }
 }
 
 %headerDecorA {
     &::after {
         position: absolute;
-        left: 0;
-        bottom: 23px;
         content: "";
         background: $violet-light4;
         width: 100%;
-        height: 9px;
-        z-index: -1;
+        height: 7px;
+        transform: translateY(33px);
+        left: 0;
     }
 }
 
 .head {
     @extend %headerDecorB;
+    @extend %headerDecorA;
     font-size: 26pt;
     display: inline;
     position: relative;
     z-index: 2;
     margin-right: 15px;
+    max-width: 210px;
 }
 
-%pBold {
+%head-small {
     font-weight: $WBold;
-    font-size: 16pt;
+    font-size: 14pt;
     padding-bottom: 15px;
 }
 
+.head-small {
+    @extend %head-small;
+}
 .header {
     padding: 20px 0;
 }

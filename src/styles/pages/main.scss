@@ -69,6 +69,15 @@
         justify-content: space-between;
         align-items: center;
     }
+    .logo-wrapper{
+        max-width: 500px;
+        min-width: 150px;
+        width: 100%;
+        margin: 0 auto;
+        logo{
+            width: 100%;
+        }
+    }
 
     &__title {
         position: relative;
@@ -87,37 +96,34 @@
         font-weight: $WBold;
     }
 
-    .link-curses {
-        padding: 20px 40px;
-        @extend %button-color;
-        &:hover{
-           @extend  %button-border;
-            padding: 20px 40px;
-            transition: .3s;
-        }
-    }
-    &__link-social {
-        padding-top: 150px;
+
+    .link-social {
+        transform: translate(-7px, 73pt);
         & img{
             margin: 0 2px;
             width: 24px;
             height: 24px;
-            opacity: 40%;
+            opacity: .3;
             transition: .5s;
             &:hover{
-                opacity: 100%;
+                opacity: 1;
                 transition: .5s;
             }
         }
     }
-    &__address{
-        padding: 15px 0 0 0;
-        opacity: 40%;
+    .address{
+        transform: translateY(80pt);
+        opacity: .3;
     }
 
-    &__picture img {
-        float: right;
-        width: 700px;
+    &__picture {
+        max-width: 700px;
+        min-width: 500px;
+        width: 100%;
+
+        & img {
+            width: 100%;
+        }
     }
 }
 

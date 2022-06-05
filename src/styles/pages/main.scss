@@ -6,7 +6,12 @@
     justify-content: space-between;
     align-items: center;
 
-    .menu {
+    .header__numder a {
+        margin: 0 10px;
+        font-size: 11pt;
+    }
+}
+.menu{
         a {
             position: relative;
             margin: 0 10px;
@@ -33,12 +38,6 @@
             margin: 0px 10px 0px 0;
         }
     }
-
-    .header__numder a {
-        margin: 0 10px;
-        font-size: 11pt;
-    }
-}
 
 .section-info {
     margin-bottom: 50px;
@@ -109,7 +108,6 @@
 
 .section-news {
     @extend %violetSection;
-    padding: 50px 0;
 
     &__wrapper {
         @extend %column;
@@ -310,5 +308,72 @@
         height: 100%;
 
     }
+}
+
+footer {
+    @extend %violetSection;
+
+    .footer-wrapper {
+        @extend %row;
+        justify-content: space-between;
+        align-items: center;
+        opacity: .7;
+
+        & p {
+            font-size: 11pt;
+        }
+
+
+        &__menu {
+            a {
+                position: relative;
+                font-size: 11pt;
+                margin: 0 10px;
+                transition: .5s;
+
+                &:hover {
+                    text-decoration: underline;
+                    transition: .5s;
+                    opacity: 1;
+                }
+            }
+
+            & img {
+                width: 17px;
+                margin: 0px 10px 0px 0;
+            }
+        }
+
+        &__logo{
+            max-width: 200px;
+            width: 100%;
+            & img{
+                width: 100%;
+            }
+        }
+        &__social {
+            @extend %column;
+            align-items: flex-end;
+            text-align: right;
+
+
+            .footer__link-social {
+                padding-top: 20px;
+
+                & img {
+                    margin: 0 2px;
+                    width: 30px;
+                    height: 24px;
+                    opacity: $Opaciti;
+                    transition: .5s;
+
+                    &:hover {
+                        opacity: 1;
+                        transition: .5s;
+                    }
+                }
+            }
+        }
     }
+}
 

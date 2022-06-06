@@ -1,6 +1,7 @@
 @import "./colors";
 $WBold: 600;
 $Opaciti: .5;
+$WidthButton: 280px;
 //Flex
 
 %row {
@@ -32,17 +33,21 @@ $Opaciti: .5;
 //style-button
 
 %button-border {
+    text-align: center;
     border: 2px solid $violet;
     border-radius: 100px;
-    padding: 15px 45px;
+    padding: 10px 20px;
+    width: $WidthButton;
     background-color: transparent;
     color: $violet;
 }
 
 %button-color {
+    text-align: center;
     border: 2px solid $violet;
     border-radius: 100px;
-    padding: 15px 45px;
+    padding: 10px 20px;
+    width: $WidthButton;
     background-color: $violet;
     box-shadow: 0px 0px 30px 2px $color-shadow;
     color: $light;
@@ -50,11 +55,13 @@ $Opaciti: .5;
 }
 
 %button_call-border {
+    text-align: center;
     border: 2px solid $violet;
     border-radius: 100px;
-    padding: 15px 45px;
+    padding: 10px 20px;
     background-color: transparent;
     color: $violet;
+    width: $WidthButton;
 
     .icon-phone_border {
         visibility: visible;
@@ -87,10 +94,12 @@ $Opaciti: .5;
 }
 
 %button_call-color {
+    text-align: center;
     position: relative;
     border: 2px solid $violet;
     border-radius: 100px;
-    padding: 15px 45px;
+    padding: 10px 20px;
+    width: $WidthButton;
     background-color: $violet;
     box-shadow: 0px 0px 30px 2px $color-shadow;
     color: $light;
@@ -126,6 +135,7 @@ $Opaciti: .5;
 
     }
 }
+
 
 .button_call-color {
     @extend %button_call-color;
@@ -191,6 +201,10 @@ $Opaciti: .5;
 .container {
     max-width: 1920px;
     margin: 0 100px;
+
+    @media (max-width: 1440px){
+        margin: 0 50px;
+    }
 }
 
 .paragraph {

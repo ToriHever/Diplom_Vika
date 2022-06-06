@@ -163,6 +163,7 @@
 
 .section-news {
     @extend %violetSection;
+    width: 100%;
 
     &__wrapper {
         @extend %column;
@@ -178,13 +179,22 @@
         justify-content: space-between;
         align-items: center;
 
+        @media (max-width: 768px){
+            display: none;
+        }
+
         &__block {
             max-width: 300px;
             width: 100%;
             margin: 0 10px;
 
             .text-opacity {
+                font-size: $FZsmoll;
                 opacity: $Opaciti;
+
+                @media (min-width: 1440px){
+                    font-size: ($FZsmoll+2);
+                }
             }
         }
     }
@@ -196,7 +206,7 @@
         overflow: hidden;
         height: 400px;
 
-        @media (max-width: 1440px){
+        @media (max-width: 1220px){
             display: flex;
             flex-direction: column;
             height: 100%;
@@ -207,7 +217,7 @@
             overflow-y: scroll;
             padding: 40px;
             margin: 0 10px 0 0;
-            max-width: 550px;
+            max-width: 500px;
             height: 100%;
 
             @media (max-width: 1440px){
@@ -261,7 +271,7 @@
             @extend %row;
             max-width: 700px;
             width: 100%;
-            min-width: 450px;
+            min-width: 400px;
 
             .news-pic {
                 max-width: 700px;
@@ -288,16 +298,10 @@
     align-items: center;
     padding: 70px 0;
 
-    @media (max-width: 768px){
+    @media (max-width: 992px){
         display: flex;
         flex-direction: column;
         align-items: center;
-        .section-contacts__wrapper__inner__info-logo {
-                position: absolute;
-                transform: translate(-35%, -5%);
-                max-width: 250px;
-                overflow: visible;
-            }
     }
 
     &__inner {
@@ -322,9 +326,9 @@
         &-map {
             @extend %row;
             background: $violet-light4;
-            max-width: 600px;
+            max-width: 1000px;
             width: 100%;
-            @media (max-width: 768px){
+            @media (max-width: 992px){
 
                 display: flex;
             flex-direction: column;
@@ -383,14 +387,21 @@
 
             &-logo {
                 position: absolute;
-                transform: translate(25%, -5%);
-                max-width: 250px;
+                transform: translate(26%, -5%);
+                max-width: 260px;
                 overflow: hidden;
+
+                @media (max-width: 992px) {
+                        position: absolute;
+                        transform: translate(-28%, -5%);
+                        max-width: 250px;
+                        overflow: visible;
+    }
 
                 .logo {
                     opacity: 10%;
                     object-fit: cover;
-                    width: 170%;
+                    width: 150%;
                 }
             }
         }

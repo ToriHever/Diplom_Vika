@@ -173,6 +173,8 @@
         @extend %row;
         overflow: hidden;
         overflow-x: auto;
+        @include scrollbars(.5em, slategray);
+
 
         &__block {
             max-width: 400px;
@@ -182,14 +184,88 @@
             position: relative;
             overflow: hidden;
 
+            &::before{
+                position: absolute;
+                content: "";
+                top: 0;
+                left: 0;
+                background: $violet-darck;
+                opacity: .6;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                transition: .5s;
+            }
+
+            &:hover .pic-courses img{
+                transform: scale(130%, 130%);
+                transition: 1.9s;
+
+            }
+
+            &:hover::before{
+                opacity: .9;
+                transition: .6s;
+            }
+
+            &:hover h4{
+                transform: translate(10pt, 90pt);
+                transition: .6s;
+            }
+
+            &:hover a{
+                transform: translate(21pt, 150pt);
+                opacity: 1;
+                transition: .6s;
+            }
+
+
+            &:hover h4::before{
+                transform: scaleX(.8);
+                transition: ease .6s;
+
+            }
+
             & h4 {
-                transform: translateY(130pt);
+                transform: translate(10pt, 130pt);
+                top: 0;
+                left: 0;
+                width: 180px;
+                text-align: center;
+                position: absolute;
+                margin: 0 auto;
+                z-index: 1;
+                transition: .5s;
+
+                &::before{
+                    position: absolute;
+                    content:"";
+                    content: "";
+                    height: 1px;
+                    left: 0;
+                    bottom: -20px;
+                    position: absolute;
+                    width: 100%;
+                    transform: scaleX(0);
+                    background: $light;
+                    transition: .5s;
+                }
+            }
+            & a {
+                transform: translate(21pt, 110pt);
                 top: 0;
                 left: 0;
                 width: 200px;
-                text-align: center;
                 position: absolute;
-                padding: 0 auto;
+                margin: 0 auto;
+                z-index: 1;
+                transition: .5s;
+                opacity: 0;
+                font-size: $FZsmoll;
+
+                &:hover{
+                    text-decoration: underline;
+                }
             }
 
             .pic-courses {

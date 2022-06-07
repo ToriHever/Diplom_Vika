@@ -208,9 +208,9 @@ $HeadSmool: 14pt;
 
 .container {
     max-width: 1920px;
-    margin: 0 100px;
+    margin: 0 auto;
 
-    @media (max-width: 1440px){
+    @media (max-width: 1920px){
         margin: 0 50px;
     }
 }
@@ -228,7 +228,7 @@ $HeadSmool: 14pt;
     ::-webkit-scrollbar-thumb {
         border-radius: 10px;
         width: 5px;
-        background: $violet-light4;
+        background: $light;
     }
 
     ::-webkit-scrollbar-track {
@@ -242,4 +242,4 @@ $HeadSmool: 14pt;
     }
 }
 
-@include scrollbars(.2em, slategray);
+@include scrollbars(.4em, slategray);

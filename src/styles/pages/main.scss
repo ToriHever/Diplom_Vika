@@ -122,7 +122,7 @@
         margin: 50px 0 80px 0;
     }
 
-    .slogan{
+    .slogan {
         font-size: 16pt;
         font-weight: $WBold;
     }
@@ -184,7 +184,7 @@
             position: relative;
             overflow: hidden;
 
-            &::before{
+            &::before {
                 position: absolute;
                 content: "";
                 top: 0;
@@ -197,30 +197,30 @@
                 transition: .5s;
             }
 
-            &:hover .pic-courses img{
+            &:hover .pic-courses img {
                 transform: scale(130%, 130%);
                 transition: 1.9s;
 
             }
 
-            &:hover::before{
+            &:hover::before {
                 opacity: .9;
                 transition: .6s;
             }
 
-            &:hover h4{
+            &:hover h4 {
                 transform: translate(10pt, 90pt);
                 transition: .6s;
             }
 
-            &:hover a{
+            &:hover a {
                 transform: translate(21pt, 150pt);
                 opacity: 1;
                 transition: .6s;
             }
 
 
-            &:hover h4::before{
+            &:hover h4::before {
                 transform: scaleX(.8);
                 transition: ease .6s;
 
@@ -237,9 +237,9 @@
                 z-index: 1;
                 transition: .5s;
 
-                &::before{
+                &::before {
                     position: absolute;
-                    content:"";
+                    content: "";
                     content: "";
                     height: 1px;
                     left: 0;
@@ -251,6 +251,7 @@
                     transition: .5s;
                 }
             }
+
             & a {
                 transform: translate(21pt, 110pt);
                 top: 0;
@@ -263,7 +264,7 @@
                 opacity: 0;
                 font-size: $FZsmoll;
 
-                &:hover{
+                &:hover {
                     text-decoration: underline;
                 }
             }
@@ -286,6 +287,7 @@
     }
 
 }
+
 .section-about-us {
 
     &__wrapper {

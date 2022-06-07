@@ -218,28 +218,3 @@ $HeadSmool: 14pt;
 .paragraph {
     padding-bottom: 10px;
 }
-
-@mixin scrollbars($size, $foreground-color, $background-color: mix($violet-light, white, 50%)) {
-    ::-webkit-scrollbar {
-        width: $size;
-        height: $size;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        border-radius: 10px;
-        width: 5px;
-        background: $light;
-    }
-
-    ::-webkit-scrollbar-track {
-        background: $violet-light;
-    }
-
-    // For Internet Explorer
-    body {
-        scrollbar-face-color: $violet;
-        scrollbar-track-color: $violet-light;
-    }
-}
-
-@include scrollbars(.4em, slategray);

@@ -32,6 +32,6 @@
   },
   "dependencies": {
     "babel-loader": "^8.2.5",
-    "normalize-scss": "^7.0.1"
+    "reset-css": "^5.0.1"
   }
 }

@@ -1,9 +1,10 @@
 @import "./colors";
 $WBold: 600;
+$Fzparagraph: 13pt;
 $Opaciti: .5;
 $FZsmoll: 11pt;
-$WidthButton: 280px;
-$HeadSmool: 14pt;
+$WidthButton: 180px;
+$HeadSmool: 16pt;
 $slow-speed: .7s;
 $fast-speed: .5s;
 
@@ -28,7 +29,15 @@ $fast-speed: .5s;
     padding: 50px 0;
     background: $violet-darck;
 
-    h2, h3, h4, h5, h6, a, p, li, ul {
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    a,
+    p,
+    li,
+    ul {
         color: $light;
     }
 }
@@ -144,10 +153,20 @@ $fast-speed: .5s;
 
 .button_call-color {
     @extend %button_call-color;
+    font-size: $Fzparagraph;
+
+    @media (max-width: 1024px) {
+        font-size: ($Fzparagraph - 3);
+    }
 }
 
 .button_call-border {
     @extend %button_call-border;
+    font-size: $Fzparagraph;
+
+    @media (max-width: 1024px) {
+        font-size: ($Fzparagraph - 3);
+    }
 
 }
 
@@ -194,25 +213,30 @@ $fast-speed: .5s;
     font-size: $HeadSmool;
     padding-bottom: 15px;
 
-    @media (max-width: 992px){
-    font-size: ($HeadSmool - 2);
-}
+    @media (max-width: 992px) {
+        font-size: ($HeadSmool - 2);
+    }
 
 }
 
 .head-small {
     @extend %head-small;
 }
+
 .header {
     padding: 20px 0;
 }
 
 .container {
-    max-width: 1920px;
+    max-width: 1300px;
     margin: 0 auto;
 
-    @media (max-width: 1920px){
+    @media (max-width: 1400px) {
         margin: 0 50px;
+    }
+
+    @media (max-width: 768px) {
+        margin: 0 15px;
     }
 }
 

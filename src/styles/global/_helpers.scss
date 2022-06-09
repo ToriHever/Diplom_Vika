@@ -1,155 +1,5 @@
 @import "./colors";
-$WBold: 600;
-$Fzparagraph: 13pt;
-$Opaciti: .5;
-$FZsmoll: 11pt;
-$WidthButton: 180px;
-$HeadSmool: 16pt;
-$slow-speed: .7s;
-$fast-speed: .5s;
-
-//Flex
-
-%row {
-    display: flex;
-    flex-direction: row;
-}
-
-%column {
-    display: flex;
-    flex-direction: column;
-}
-
-//***********************************************
-
-
-//Color-section
-
-%violetSection {
-    padding: 50px 0;
-    background: $violet-darck;
-
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    a,
-    p,
-    li,
-    ul {
-        color: $light;
-    }
-}
-
-//***********************************************
-
-//style-button
-
-%button-border {
-    text-align: center;
-    border: 2px solid $violet;
-    border-radius: 100px;
-    padding: 10px 20px;
-    width: $WidthButton;
-    background-color: transparent;
-    color: $violet;
-}
-
-%button-color {
-    text-align: center;
-    border: 2px solid $violet;
-    border-radius: 100px;
-    padding: 10px 20px;
-    width: $WidthButton;
-    background-color: $violet;
-    box-shadow: 0px 0px 30px 2px $color-shadow;
-    color: $light;
-    transition: .3s;
-}
-
-%button_call-border {
-    text-align: center;
-    border: 2px solid $violet;
-    border-radius: 100px;
-    padding: 10px 20px;
-    background-color: transparent;
-    color: $violet;
-    width: $WidthButton;
-
-    .icon-phone_border {
-        visibility: visible;
-        position: relative;
-        width: 15px;
-        margin-right: 10px;
-    }
-
-    .icon-phone_color {
-        position: absolute;
-        visibility: hidden;
-        transform: translateX(-30px);
-        width: 15px;
-        margin-right: 10px;
-    }
-
-    &:hover {
-        @extend %button-color;
-
-        .icon-phone_color {
-            visibility: visible;
-
-        }
-
-        .icon-phone_border {
-            visibility: hidden;
-
-        }
-    }
-}
-
-%button_call-color {
-    text-align: center;
-    position: relative;
-    border: 2px solid $violet;
-    border-radius: 100px;
-    padding: 10px 20px;
-    width: $WidthButton;
-    background-color: $violet;
-    box-shadow: 0px 0px 30px 2px $color-shadow;
-    color: $light;
-    transition: .3s;
-
-    .icon-phone_border {
-        visibility: hidden;
-        position: relative;
-        width: 15px;
-        margin-right: 10px;
-    }
-
-    .icon-phone_color {
-        position: absolute;
-        visibility: visible;
-        transform: translateX(-30px);
-        width: 15px;
-        margin-right: 10px;
-    }
-
-    &:hover {
-        @extend %button-border;
-
-        .icon-phone_color {
-            visibility: hidden;
-
-        }
-
-        .icon-phone_border {
-            visibility: visible;
-
-        }
-
-    }
-}
-
+@import "./mixins";
 
 .button_call-color {
     @extend %button_call-color;
@@ -172,30 +22,6 @@ $fast-speed: .5s;
 
 //***********************************************
 
-%headerDecorB {
-    &::before {
-        position: absolute;
-        content: "";
-        background: $violet-light4;
-        width: 100%;
-        height: 7px;
-        transform: translateY(33px);
-        z-index: -1;
-    }
-}
-
-%headerDecorA {
-    &::after {
-        position: absolute;
-        content: "";
-        background: $violet-light4;
-        width: 100%;
-        height: 7px;
-        transform: translateY(33px);
-        left: 0;
-        z-index: -1;
-    }
-}
 
 .head {
     @extend %headerDecorB;
@@ -208,7 +34,7 @@ $fast-speed: .5s;
     max-width: 210px;
 }
 
-%head-small {
+.head-small {
     font-weight: $WBold;
     font-size: $HeadSmool;
     padding-bottom: 15px;
@@ -216,15 +42,28 @@ $fast-speed: .5s;
     @media (max-width: 992px) {
         font-size: ($HeadSmool - 2);
     }
-
 }
 
-.head-small {
-    @extend %head-small;
+.text {
+    @extend %text;
+}
+
+.all {
+    opacity: $OpacitiLink;
+    font-size: $FZsmoll;
+
+    &:hover {
+        opacity: ($OpacitiLink + 3);
+        text-decoration: underline;
+    }
 }
 
 .header {
     padding: 20px 0;
+}
+
+.smoll-text {
+    font-size: $FZsmoll;
 }
 
 .container {
@@ -238,6 +77,11 @@ $fast-speed: .5s;
     @media (max-width: 768px) {
         margin: 0 15px;
     }
+}
+
+.wrapper {
+    padding: 40px 0;
+    margin: 0 40px;
 }
 
 .paragraph {

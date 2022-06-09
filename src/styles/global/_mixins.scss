@@ -1,4 +1,17 @@
 @import "./colors";
+
+$WBold: 600;
+$Fzparagraph: 13pt;
+$Opaciti: .5;
+$OpacitiLink: .7;
+$FZsmoll: 11pt;
+$WidthButton: 180px;
+$HeadSmool: 14pt;
+$slow-speed: .7s;
+$fast-speed: .5s;
+$indent: 10px;
+$WrapperPadding: 40px;
+
 @mixin scrollbars($size, $foreground-color, $background-color: mix($violet-light, white, 50%)) {
     ::-webkit-scrollbar {
         width: $size;
@@ -23,3 +36,173 @@
 }
 
 @include scrollbars(.4em, slategray);
+
+//Flex
+
+%row {
+    display: flex;
+    flex-direction: row;
+}
+
+%column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+%text {
+    padding: 20px 0;
+    margin: 0 20px;
+
+    .wrapper {
+        padding-bottom: 20px;
+    }
+
+    .paragraph {
+        margin-bottom: $indent;
+        line-height: 1;
+        font-size: $Fzparagraph;
+    }
+}
+
+//Color-section
+
+%violetSection {
+    padding: 50px 0;
+    background: $violet-darck;
+
+    h2, h3, h4, h5, h6, a, p, li, ul {
+        color: $light;
+    }
+}
+
+//style-button
+
+%button-border {
+    text-align: center;
+    border: 2px solid $violet;
+    border-radius: 100px;
+    padding: 10px 20px;
+    width: $WidthButton;
+    background-color: transparent;
+    color: $violet;
+}
+
+%button-color {
+    text-align: center;
+    border: 2px solid $violet;
+    border-radius: 100px;
+    padding: 10px 20px;
+    width: $WidthButton;
+    background-color: $violet;
+    box-shadow: 0px 0px 30px 2px $color-shadow;
+    color: $light;
+    transition: .3s;
+}
+
+%button_call-border {
+    text-align: center;
+    border: 2px solid $violet;
+    border-radius: 100px;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: $violet;
+    width: $WidthButton;
+
+    .icon-phone_border {
+        visibility: visible;
+        position: relative;
+        width: 15px;
+        margin-right: 10px;
+    }
+
+    .icon-phone_color {
+        position: absolute;
+        visibility: hidden;
+        transform: translateX(-30px);
+        width: 15px;
+        margin-right: 10px;
+    }
+
+    &:hover {
+        @extend %button-color;
+
+        .icon-phone_color {
+            visibility: visible;
+
+        }
+
+        .icon-phone_border {
+            visibility: hidden;
+
+        }
+    }
+}
+
+%button_call-color {
+    text-align: center;
+    position: relative;
+    border: 2px solid $violet;
+    border-radius: 100px;
+    padding: 10px 20px;
+    width: $WidthButton;
+    background-color: $violet;
+    box-shadow: 0px 0px 30px 2px $color-shadow;
+    color: $light;
+    transition: .3s;
+
+    .icon-phone_border {
+        visibility: hidden;
+        position: relative;
+        width: 15px;
+        margin-right: 10px;
+    }
+
+    .icon-phone_color {
+        position: absolute;
+        visibility: visible;
+        transform: translateX(-30px);
+        width: 15px;
+        margin-right: 10px;
+    }
+
+    &:hover {
+        @extend %button-border;
+
+        .icon-phone_color {
+            visibility: hidden;
+
+        }
+
+        .icon-phone_border {
+            visibility: visible;
+
+        }
+
+    }
+}
+
+%headerDecorB {
+    &::before {
+        position: absolute;
+        content: "";
+        background: $violet-light4;
+        width: 100%;
+        height: 7px;
+        transform: translateY(27px);
+        z-index: -1;
+    }
+}
+
+%headerDecorA {
+    &::after {
+        position: absolute;
+        content: "";
+        background: $violet-light4;
+        width: 100%;
+        height: 7px;
+        transform: translateY(27px);
+        left: 0;
+        z-index: -1;
+    }
+}

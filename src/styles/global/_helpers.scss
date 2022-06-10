@@ -1,4 +1,68 @@
-.h1 {
-  font-weight: bold;
-  color: purple;
+@import "./colors";
+@import "./mixins";
+@import './buttons';
+@import './flex';
+ body {
+    background-color: #e3dcd5;
+}
+.button_call-color {
+    @include button_call-color;
+    font-size: $Fzparagraph;
+    @media (max-width: 1024px) {
+        font-size: ($Fzparagraph - 3);
+    }
+}
+.button_call-border {
+    @include button_call-border;
+    font-size: $Fzparagraph;
+    @media (max-width: 1024px) {
+        font-size: ($Fzparagraph - 3);
+    }
+}
+//***********************************************
+ .head {
+    text-align: left;
+    font-size: 26pt;
+    display: inline;
+    position: relative;
+    z-index: 2;
+    margin-right: 15px;
+    max-width: 210px;
+     &::before{
+         @include headerDecorB;
+     }
+}
+.head-small {
+    font-weight: $WBold;
+    font-size: $HeadSmool;
+    padding-bottom: 15px;
+    @media (max-width: 992px) {
+        font-size: ($HeadSmool - 2);
+    }
+}
+.text {
+    @include text;
+}
+.all {
+    @include link($violet-light4, $FZsmoll, $Opaciti);
+}
+.header {
+    padding: 20px 0;
+}
+.smoll-text {
+    font-size: $FZsmoll;
+}
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    @media (max-width: 1400px) {
+        margin: 0 50px;
+    }
+    @media (max-width: 768px) {
+        margin: 0 15px;
+    }
+}
+
+.paragraph {
+    padding-bottom: 10px;
 }

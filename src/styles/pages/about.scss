@@ -7,6 +7,92 @@
     @include violetSection;
 }
 
+.menu {
+    a {
+        @include link($light, 13pt, 1);
+        margin-right: 10px;
+        @media (max-width: 1024px) {
+            font-size: ($Fzparagraph - 2);
+        }
+        &::before {
+            position: absolute;
+            bottom: 0;
+            content: "";
+            background: $violet-light4;
+            width: 100%;
+            height: 7px;
+            transform: scaleX(0);
+            z-index: 1;
+            transition: $slow-speed;
+        }
+        &:hover::before {
+            transform: scaleX(1);
+            transition: $slow-speed;
+        }
+    }
+    & img {
+        width: 17px;
+        margin: 0px 10px 0px 0;
+    }
+}
+
 .section-intro{
     @include violetSection;
+}
+
+.section-gallery{
+    .wrapper{
+        @include row;
+        justify-content: center;
+    }
+    &__inner{
+        margin: 15px;
+        .photo-medium{
+            margin: 30px 0;
+            max-width: 350px;
+            width: 100%;
+            max-height: 350px;
+            overflow: hidden;
+            box-shadow: 2px 2px 20px 0px $violet-darck5;
+        }
+        .photo-big{
+            margin: 30px 0;
+            max-width: 350px;;
+            width: 100%;
+            max-height: 460px;
+            overflow: hidden;
+            box-shadow: 2px 2px 20px 0px $violet-darck5;
+        }
+        .photo-smoll{
+            margin: 30px 0;
+            max-width: 350px;
+            width: 100%;
+            max-height: 230px;
+            overflow: hidden;
+            box-shadow: 2px 2px 20px 0px $violet-darck5;
+        }
+        .photo-medium-big{
+            margin: 30px 0;
+            max-width: 350px;
+            width: 100%;
+            max-height: 400px;
+            overflow: hidden;
+            box-shadow: 2px 2px 20px 0px $violet-darck5;
+        }
+        .photo-extralarge{
+            margin: 30px 0;
+            max-width: 350px;;
+            width: 100%;
+            max-height: 520px;
+            overflow: hidden;
+            box-shadow: 2px 2px 20px 0px $violet-darck5;
+        }
+
+        & img{
+            object-fit: contain;
+            object-position: center;
+            width: 100%;
+        }
+
+    }
 }

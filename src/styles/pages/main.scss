@@ -42,26 +42,25 @@
 }
 .menu {
     a {
-        position: relative;
-        margin: 0 10px;
-        font-size: $Fzparagraph;
+        @include link($violet-darck, 13pt, 1);
+        margin-right: 10px;
         @media (max-width: 1024px) {
             font-size: ($Fzparagraph - 2);
         }
-        &::after {
+        &::before {
             position: absolute;
-            left: -3px;
-            bottom: 0px;
+            bottom: 0;
             content: "";
             background: $violet-light4;
-            width: 110%;
+            width: 100%;
             height: 7px;
             transform: scaleX(0);
-            transition: $fast-speed;
+            z-index: -1;
+            transition: $slow-speed;
         }
-        &:hover::after {
-            transition: $fast-speed;
+        &:hover::before {
             transform: scaleX(1);
+            transition: $slow-speed;
         }
     }
     & img {
@@ -146,7 +145,7 @@
             height: 24px;
             opacity: $Opaciti;
             transition: $fast-speed;
-            &: hover {
+            &:hover {
                 opacity: 1;
                 transition: $fast-speed;
             }
@@ -177,6 +176,7 @@
         @include row;
         overflow: hidden;
         overflow-x: auto;
+        padding: 20px 0;
     }
     &__block {
         max-width: 400px;
@@ -185,7 +185,7 @@
         min-height: 400px;
         position: relative;
         overflow: hidden;
-        &: : before {
+        &::before {
             position: absolute;
             content: "";
             top: 0;
@@ -228,7 +228,7 @@
             margin: 0 auto;
             z-index: 1;
             transition: $fast-speed;
-            &: : before {
+            &::before {
                 position: absolute;
                 content: "";
                 content: "";
@@ -269,6 +269,7 @@
 }
 .section-about-us {
     .wrapper {
+        padding-top: 40px;
         @include row;
         justify-content: center;
         align-items: center;
@@ -484,7 +485,7 @@
                 @include row;
                 align-items: center;
                 padding-bottom: 10px;
-                &: hover {
+                &:hover {
                     text-decoration: underline;
                 }
                 & img {
@@ -542,7 +543,7 @@ footer {
                 font-size: 11pt;
                 margin: 0 10px;
                 transition: $fast-speed;
-                &: hover {
+                &:hover {
                     text-decoration: underline;
                     transition: $fast-speed;
                     opacity: 1;
@@ -575,7 +576,7 @@ footer {
                     height: 24px;
                     opacity: $Opaciti;
                     transition: $fast-speed;
-                    &: hover {
+                    &:hover {
                         opacity: 1;
                         transition: $fast-speed;
                     }

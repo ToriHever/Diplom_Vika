@@ -1,1 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Prata&display=swap');
+@import 'colors.scss';
+
+h1, h2, h3, h4, h5, h6 {
+   font-family: 'Playfair Display', serif;
+    color: $violet;
+}
+
+a, p, li, ul, ol, span{
+    text-decoration: none;
+    font-family: 'Open-sans', sans-serif;
+    color: $violet;
+}

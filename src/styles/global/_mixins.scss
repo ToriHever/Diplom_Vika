@@ -10,23 +10,22 @@
  $fast-speed:.5s;
  $indent:10px;
  $WrapperPadding:40px;
-@mixin scrollbars($size,
-$foreground-color,
-$background-color:mix($violet-light,
-white,
-50%)) {
-    : : -webkit-scrollbar {
+@mixin scrollbars($size, $foreground-color, $background-color: mix($violet-light,white,50%)) {
+    ::-webkit-scrollbar {
         width: $size;
         height: $size;
     }
+
     ::-webkit-scrollbar-thumb {
         border-radius: 10px;
         width: 5px;
         background: $light;
     }
+
     ::-webkit-scrollbar-track {
         background: $violet-light;
     }
+
     // For Internet Explorer
     body {
         scrollbar-face-color: $violet;
@@ -36,6 +35,7 @@ white,
 @include scrollbars(.4em,slategray);
 
 @mixin text {
+    text-align: left;
     padding: 20px 0;
     margin: 0 20px;
     .wrapper {
@@ -55,7 +55,6 @@ white,
     }
 }
 @mixin headerDecorB {
-    &: : before {
         position: absolute;
         content: "";
         background: $violet-light4;
@@ -63,17 +62,17 @@ white,
         height: 7px;
         transform: translateY(27px);
         z-index: -1;
-    }
 }
-@mixin headerDecorA {
-    &: : after {
-        position: absolute;
-        content: "";
-        background: $violet-light4;
-        width: 100%;
-        height: 7px;
-        transform: translateY(27px);
-        left: 0;
-        z-index: -1;
+@mixin link($color, $Fz, $opasiti) {
+    position: relative;
+    text-decoration: none;
+    color: $color;
+    font-size: $Fz;
+    opacity: $opasiti;
+    transition: $slow-speed;
+
+    &:hover{
+        opacity: 1;
+        text-decoration: underline;
     }
 }

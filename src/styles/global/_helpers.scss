@@ -6,7 +6,7 @@ body{
 }
 
 .button_call-color {
-    @extend %button_call-color;
+    @include button_call-color;
     font-size: $Fzparagraph;
 
     @media (max-width: 1024px) {
@@ -15,7 +15,7 @@ body{
 }
 
 .button_call-border {
-    @extend %button_call-border;
+    @include button_call-border;
     font-size: $Fzparagraph;
 
     @media (max-width: 1024px) {
@@ -28,8 +28,8 @@ body{
 
 
 .head {
-    @extend %headerDecorB;
-    @extend %headerDecorA;
+    @include headerDecorB;
+    @include headerDecorA;
     font-size: 26pt;
     display: inline;
     position: relative;
@@ -49,7 +49,7 @@ body{
 }
 
 .text {
-    @extend %text;
+    @include text;
 }
 
 .all {

@@ -1,5 +1,6 @@
 @import '../global/colors';
 @import '../global/helpers';
+@import '../global/mixins';
 
 @media (max-width: 1024px) {
     p {
@@ -9,12 +10,12 @@
 }
 
 .header__content {
-    @extend %row;
+    @include row;
     justify-content: space-between;
     align-items: center;
 
     &__numder {
-        @extend %row;
+        @include row;
         justify-content: space-between;
         align-items: center;
 
@@ -112,7 +113,7 @@
     }
 
     &__content {
-        @extend %row;
+        @include row;
         padding: 50px 0;
         justify-content: space-between;
         align-items: center;
@@ -211,10 +212,10 @@
 }
 
 .section-courses {
-    @extend %violetSection;
+    @include violetSection;
 
     .wrapper {
-        @extend %row;
+        @include row;
         overflow: hidden;
         overflow-x: auto;
     }
@@ -327,7 +328,7 @@
 .section-about-us {
 
     .wrapper {
-        @extend %row;
+        @include row;
         justify-content: center;
         align-items: center;
 
@@ -338,7 +339,7 @@
     }
 
     &__content {
-        @extend %column;
+        @include column;
         align-items: center;
 
         @media (max-width: 992px) {
@@ -354,7 +355,7 @@
     }
 
     &__content__inner {
-        @extend %row;
+        @include row;
 
         &__block {
             padding: 40px;
@@ -389,11 +390,11 @@
 }
 
 .section-news {
-    @extend %violetSection;
+    @include violetSection;
     width: 100%;
 
     &__wrapper {
-        @extend %column;
+        @include column;
         padding: 40px;
 
         @media (max-width: 1440px) {
@@ -403,7 +404,7 @@
 
     &__content-advice {
         padding-bottom: 50px;
-        @extend %row;
+        @include row;
         justify-content: space-between;
         align-items: center;
 
@@ -428,7 +429,7 @@
     }
 
     &__content {
-        @extend %row;
+        @include row;
         background: $violet-light;
         margin: 0 auto;
         height: 100%;
@@ -442,7 +443,7 @@
 
 
         &__text {
-            @extend %text;
+            @include text;
             padding: 40px;
             margin: 0 10px 0 0;
             max-width: 500px;
@@ -455,7 +456,7 @@
             &__author {
                 max-width: 350px;
                 min-width: 250px;
-                @extend %row;
+                @include row;
                 align-content: center;
                 padding-bottom: 10px;
 
@@ -492,7 +493,7 @@
 
 
         &_picture {
-            @extend %row;
+            @include row;
             max-width: 700px;
             width: 100%;
             min-width: 400px;
@@ -517,7 +518,7 @@
 }
 
 .section-contacts__wrapper {
-    @extend %row;
+    @include row;
     justify-content: space-between;
     align-items: center;
     padding: 70px 20px;
@@ -548,7 +549,7 @@
         }
 
         &-map {
-            @extend %row;
+            @include row;
             background: $violet-light4;
             max-width: 1000px;
             width: 100%;
@@ -579,14 +580,14 @@
         }
 
         &__info {
-            @extend %column;
+            @include column;
             padding: 70px 30px;
             position: relative;
             max-width: 300px;
 
 
             & a {
-                @extend %row;
+                @include row;
                 align-items: center;
                 padding-bottom: 10px;
 
@@ -633,7 +634,7 @@
     }
 
     .section-contacts__inner-info {
-        @extend %column;
+        @include column;
         max-width: 450px;
         width: 100%;
         height: 100%;
@@ -642,10 +643,10 @@
 }
 
 footer {
-    @extend %violetSection;
+    @include violetSection;
 
     .footer-wrapper {
-        @extend %row;
+        @include row;
         justify-content: space-between;
         align-items: center;
         opacity: $Opaciti;
@@ -689,7 +690,7 @@ footer {
         }
 
         &__social {
-            @extend %column;
+            @include column;
             align-items: flex-end;
             text-align: right;
 

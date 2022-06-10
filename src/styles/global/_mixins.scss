@@ -39,18 +39,18 @@ $WrapperPadding: 40px;
 
 //Flex
 
-%row {
+@mixin row {
     display: flex;
     flex-direction: row;
 }
 
-%column {
+@mixin column {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-%text {
+@mixin text {
     padding: 20px 0;
     margin: 0 20px;
 
@@ -67,7 +67,7 @@ $WrapperPadding: 40px;
 
 //Color-section
 
-%violetSection {
+@mixin violetSection {
     padding: 50px 0;
     background: $violet-darck;
 
@@ -78,7 +78,7 @@ $WrapperPadding: 40px;
 
 //style-button
 
-%button-border {
+@mixin button-border {
     text-align: center;
     border: 2px solid $violet;
     border-radius: 100px;
@@ -88,7 +88,7 @@ $WrapperPadding: 40px;
     color: $violet;
 }
 
-%button-color {
+@mixin button-color {
     text-align: center;
     border: 2px solid $violet;
     border-radius: 100px;
@@ -100,7 +100,7 @@ $WrapperPadding: 40px;
     transition: .3s;
 }
 
-%button_call-border {
+@mixin button_call-border {
     text-align: center;
     border: 2px solid $violet;
     border-radius: 100px;
@@ -125,7 +125,7 @@ $WrapperPadding: 40px;
     }
 
     &:hover {
-        @extend %button-color;
+        @include button-color;
 
         .icon-phone_color {
             visibility: visible;
@@ -139,7 +139,7 @@ $WrapperPadding: 40px;
     }
 }
 
-%button_call-color {
+@mixin button_call-color {
     text-align: center;
     position: relative;
     border: 2px solid $violet;
@@ -167,7 +167,7 @@ $WrapperPadding: 40px;
     }
 
     &:hover {
-        @extend %button-border;
+        @include button-border;
 
         .icon-phone_color {
             visibility: hidden;
@@ -182,7 +182,7 @@ $WrapperPadding: 40px;
     }
 }
 
-%headerDecorB {
+@mixin headerDecorB {
     &::before {
         position: absolute;
         content: "";
@@ -194,7 +194,7 @@ $WrapperPadding: 40px;
     }
 }
 
-%headerDecorA {
+@mixin headerDecorA {
     &::after {
         position: absolute;
         content: "";

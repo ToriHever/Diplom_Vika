@@ -1,3 +1,9 @@
+@import '../global/colors';
+@import '../global/helpers';
+@import '../global/mixins';
+@import '../global/buttons';
+@import '../global/flex';
 h2 {
-  color: red;
+    font-size: 22pt;
+    @include  link($light, 25pt, 1);
 }

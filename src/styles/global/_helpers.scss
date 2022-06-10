@@ -19,6 +19,14 @@
         font-size: ($Fzparagraph - 3);
     }
 }
+
+.button-border{
+    @include button-color;
+}
+
+.button-color{
+    @include button-color;
+}
 //***********************************************
  .head {
     text-align: left;

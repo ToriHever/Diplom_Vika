@@ -6,11 +6,6 @@
     width: $WidthButton;
     background-color: transparent;
     color: $violet;
-    transition: .3s;
-
-    &:hover{
-        @include button-color;
-    }
 }
 @mixin button-color {
     text-align: center;
@@ -22,10 +17,6 @@
     box-shadow: 0px 0px 30px 2px $color-shadow;
     color: $light;
     transition: .3s;
-
-    &:hover{
-        @include button-border;
-    }
 }
 @mixin button_call-border {
     text-align: center;

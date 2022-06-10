@@ -1,6 +1,10 @@
 @import "./colors";
 @import "./mixins";
 
+body{
+    background-color: #e3dcd5;
+}
+
 .button_call-color {
     @extend %button_call-color;
     font-size: $Fzparagraph;

@@ -1,68 +1,61 @@
 @import "./colors";
-
-$WBold: 600;
-$Fzparagraph: 13pt;
-$Opaciti: .5;
-$OpacitiLink: .7;
-$FZsmoll: 11pt;
-$WidthButton: 180px;
-$HeadSmool: 14pt;
-$slow-speed: .7s;
-$fast-speed: .5s;
-$indent: 10px;
-$WrapperPadding: 40px;
-
-@mixin scrollbars($size, $foreground-color, $background-color: mix($violet-light, white, 50%)) {
-    ::-webkit-scrollbar {
+ $WBold:600;
+ $Fzparagraph:13pt;
+ $Opaciti:.5;
+ $OpacitiLink:.7;
+ $FZsmoll:11pt;
+ $WidthButton:180px;
+ $HeadSmool:14pt;
+ $slow-speed:.7s;
+ $fast-speed:.5s;
+ $indent:10px;
+ $WrapperPadding:40px;
+@mixin scrollbars($size,
+$foreground-color,
+$background-color:mix($violet-light,
+white,
+50%)) {
+    : : -webkit-scrollbar {
         width: $size;
         height: $size;
     }
-
     ::-webkit-scrollbar-thumb {
         border-radius: 10px;
         width: 5px;
         background: $light;
     }
-
     ::-webkit-scrollbar-track {
         background: $violet-light;
     }
-
     // For Internet Explorer
     body {
         scrollbar-face-color: $violet;
         scrollbar-track-color: $violet-light;
     }
 }
-
-@include scrollbars(.4em, slategray);
+@include scrollbars(.4em,slategray);
 
 @mixin text {
     padding: 20px 0;
     margin: 0 20px;
-
     .wrapper {
         padding-bottom: 20px;
     }
-
     .paragraph {
         margin-bottom: $indent;
         line-height: 1;
         font-size: $Fzparagraph;
     }
 }
-
 @mixin violetSection {
     padding: 50px 0;
     background: $violet-darck;
-
     h2, h3, h4, h5, h6, a, p, li, ul {
         color: $light;
     }
 }
-
 @mixin headerDecorB {
-    &::before {
+    &: : before {
         position: absolute;
         content: "";
         background: $violet-light4;
@@ -72,9 +65,8 @@ $WrapperPadding: 40px;
         z-index: -1;
     }
 }
-
 @mixin headerDecorA {
-    &::after {
+    &: : after {
         position: absolute;
         content: "";
         background: $violet-light4;

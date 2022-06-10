@@ -1,34 +1,26 @@
 @import "./colors";
 @import "./mixins";
 @import './buttons';
-
-body{
+@import './flex';
+ body {
     background-color: #e3dcd5;
 }
-
 .button_call-color {
     @include button_call-color;
     font-size: $Fzparagraph;
-
     @media (max-width: 1024px) {
         font-size: ($Fzparagraph - 3);
     }
 }
-
 .button_call-border {
     @include button_call-border;
     font-size: $Fzparagraph;
-
     @media (max-width: 1024px) {
         font-size: ($Fzparagraph - 3);
     }
-
 }
-
 //***********************************************
-
-
-.head {
+ .head {
     @include headerDecorB;
     @include headerDecorA;
     font-size: 26pt;
@@ -38,57 +30,45 @@ body{
     margin-right: 15px;
     max-width: 210px;
 }
-
 .head-small {
     font-weight: $WBold;
     font-size: $HeadSmool;
     padding-bottom: 15px;
-
     @media (max-width: 992px) {
         font-size: ($HeadSmool - 2);
     }
 }
-
 .text {
     @include text;
 }
-
 .all {
     opacity: $OpacitiLink;
     font-size: $FZsmoll;
-
-    &:hover {
+    &: hover {
         opacity: ($OpacitiLink + 3);
         text-decoration: underline;
     }
 }
-
 .header {
     padding: 20px 0;
 }
-
 .smoll-text {
     font-size: $FZsmoll;
 }
-
 .container {
     max-width: 1300px;
     margin: 0 auto;
-
     @media (max-width: 1400px) {
         margin: 0 50px;
     }
-
     @media (max-width: 768px) {
         margin: 0 15px;
     }
 }
-
 .wrapper {
     padding: 40px 0;
     margin: 0 40px;
 }
-
 .paragraph {
     padding-bottom: 10px;
 }

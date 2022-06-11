@@ -36,8 +36,30 @@
     }
 }
 
-.section-intro{
+.section-intro {
     @include violetSection;
+
+    .wrapper {
+        @include row;
+
+        .text{
+            max-width: 350px;
+            width: 100%;
+        }
+
+        .pic-gallery {
+            max-width: 550px;
+            width: 100%;
+            max-height: 670px;
+            overflow: hidden;
+
+            & img {
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
 }
 
 .section-gallery{
@@ -89,7 +111,7 @@
         }
 
         & img{
-            object-fit: contain;
+            object-fit: cover;
             object-position: center;
             width: 100%;
         }

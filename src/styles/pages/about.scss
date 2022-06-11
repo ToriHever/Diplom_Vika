@@ -6,7 +6,6 @@
 .header{
     @include violetSection;
 }
-
 .menu {
     a {
         @include link($light, 13pt, 1);
@@ -37,10 +36,13 @@
 }
 
 .section-intro {
+    @include social(-7px, 35px);
     @include violetSection;
 
     .wrapper {
         @include row;
+        max-width: 800px;
+        margin: 0 auto;
 
         .text{
             max-width: 350px;
@@ -48,9 +50,9 @@
         }
 
         .pic-gallery {
-            max-width: 550px;
+            max-width: 350px;
             width: 100%;
-            max-height: 670px;
+            max-height: 570px;
             overflow: hidden;
 
             @media (max-width: 768px){

@@ -1,11 +1,11 @@
 @import "./colors";
  $WBold:600;
- $Fzparagraph:13pt;
+ $Fzparagraph:12pt;
  $Opaciti:.5;
  $OpacitiLink:.7;
- $FZsmoll:11pt;
+ $FZsmoll:10pt;
  $WidthButton:180px;
- $HeadSmool:14pt;
+ $HeadSmool:13pt;
  $slow-speed:.7s;
  $fast-speed:.5s;
  $indent:10px;
@@ -43,7 +43,7 @@
     }
     .paragraph {
         margin-bottom: $indent;
-        line-height: 1;
+        line-height: 1.2;
         font-size: $Fzparagraph;
     }
 }

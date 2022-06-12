@@ -407,9 +407,12 @@
         }
         &_picture {
             @include row;
-            max-width: 700px;
-            width: 100%;
+            max-width: 100%;
             min-width: 400px;
+
+            @media (max-width: 1220px){
+                padding: 20px 0;
+            }
             .news-pic {
                 max-width: 700px;
                 width: 100%;

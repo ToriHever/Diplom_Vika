@@ -37,7 +37,7 @@
 .head-small {
     font-weight: $WBold;
     font-size: $HeadSmool;
-    padding-bottom: 15px;
+    padding: 0 0 15px 0;
     @media (max-width: 992px) {
         font-size: ($HeadSmool - 2);
     }
@@ -47,9 +47,10 @@
 }
 .all {
     @include link($violet-light4, $FZsmoll, $Opaciti);
-}
-.header {
-    padding: 20px 0;
+
+    &:hover{
+        text-decoration: underline;
+    }
 }
 .smoll-text {
     font-size: $FZsmoll;

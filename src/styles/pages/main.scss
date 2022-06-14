@@ -2,16 +2,33 @@
 @import '../global/helpers';
 @import '../global/mixins';
 @import '../global/flex';
+
 @media (max-width: 1024px) {
     p {
         font-size: ($Fzparagraph - 3);
         line-height: 1.3;
     }
 }
-.header__content {
+
+.header{
+    position: fixed;
+    background-color:$light;
+    z-index: 99;
+    padding: 10px 0;
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0px 0px 20px 5px rgb(56, 48, 59, .5);
+}
+
+    .header__content {
     @include row;
     justify-content: space-between;
     align-items: center;
+        @media (max-width: 768px) {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
     &__numder {
         @include row;
         justify-content: space-between;
@@ -44,8 +61,13 @@
     a {
         @include link($violet-darck, 13pt, 1);
         margin-right: 10px;
+
         @media (max-width: 1024px) {
             font-size: ($Fzparagraph - 2);
+        }
+
+        @media (max-width: 768px) {
+            max-width: 320px;
         }
         &::before {
             position: absolute;
@@ -67,12 +89,11 @@
         width: 17px;
         margin: 0px 10px 0px 0;
     }
-    @media (max-width: 768px) {
-        display: none;
-    }
 }
 .section-info {
+    @include link-social (-7px, 73px);
     margin-bottom: 50px;
+    padding-top: 40px;
     @media (max-width: 1024px) {
         &__wrapper {
             text-align: center;
@@ -137,20 +158,6 @@
         font-size: $HeadSmool;
         font-weight: $WBold;
     }
-    .link-social {
-        transform: translate(-7px, 73pt);
-        & img {
-            margin: 0 2px;
-            width: 24px;
-            height: 24px;
-            opacity: $Opaciti;
-            transition: $fast-speed;
-            &:hover {
-                opacity: 1;
-                transition: $fast-speed;
-            }
-        }
-    }
     span {
         display: inline-block;
         padding-bottom: 30px;
@@ -210,7 +217,7 @@
             transition: $slow-speed;
         }
         &:hover .all {
-            transform: translate(21pt, 150pt);
+            transform: translate(28pt, 150pt);
             opacity: 1;
             transition: $slow-speed;
         }
@@ -243,7 +250,7 @@
             }
         }
         .all {
-            transform: translate(21pt, 110pt);
+            transform: translate(28pt, 110pt);
             top: 0;
             left: 0;
             width: 200px;
@@ -356,8 +363,9 @@
         @include row;
         background: $violet-light;
         margin: 0 auto;
-        height: 100%;
+        height: 400px;
         min-width: 350px;
+        overflow: hidden;
         @media (max-width: 1220px) {
             display: flex;
             flex-direction: column;
@@ -365,10 +373,12 @@
         }
         &__text {
             @include text;
-            padding: 40px;
+            overflow: scroll;
+            padding: 20px;
             margin: 0 10px 0 0;
             max-width: 500px;
             height: 100%;
+
             @media (max-width: 1440px) {
                 margin: 0 auto;
             }
@@ -407,9 +417,12 @@
         }
         &_picture {
             @include row;
-            max-width: 700px;
-            width: 100%;
+            max-width: 100%;
             min-width: 400px;
+
+            @media (max-width: 1220px){
+                padding: 20px 0;
+            }
             .news-pic {
                 max-width: 700px;
                 width: 100%;
@@ -527,61 +540,174 @@
         height: 100%;
     }
 }
-footer {
-    @include violetSection;
-    .footer-wrapper {
+.info {
+    @include column;
+    @include link-social (-3px, -40px);
+    max-width: 1500px;
+    width: 100%;
+    min-width: 320px;
+    margin: auto;
+    .wrapper {
         @include row;
-        justify-content: space-between;
-        align-items: center;
-        opacity: $Opaciti;
-        & p {
-            font-size: 11pt;
+        justify-content: center;
+        border-bottom: 1px solid $violet;
+        height: 100%;
+        padding: 50px 0;
+
+        @media (max-width: 768px) {
+            @include column;
         }
-        &__menu {
-            a {
-                position: relative;
-                font-size: 11pt;
-                margin: 0 10px;
-                transition: $fast-speed;
-                &:hover {
-                    text-decoration: underline;
-                    transition: $fast-speed;
-                    opacity: 1;
+    }
+    &-block-end {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding-top: 50px;
+
+        @media (max-width: 768px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    &-block {
+        @include column;
+        justify-content: flex-start;
+        height: 100%;
+
+        @media (max-width: 1300px) {
+            align-items: center;
+        }
+        &:nth-child(odd) {
+            margin-right: 60px;
+
+            @media (max-width: 992px) {
+                margin-right: 0px;
+            }
+        }
+        &__pic {
+            max-width: 550px;
+            max-height: 330px;
+            overflow: hidden;
+            box-shadow: 0px 0px 20px 5px rgb(56, 48, 59, .5);
+
+            @media (max-width: 992px) {
+                max-width: 400px;
+                max-height: 250px;
+            }
+            & img {
+                height: 450px;
+                width: 330px;
+
+                @media (max-width: 992px) {
+                    max-width: 400px;
+                    max-height: 250px;
                 }
             }
-            & img {
-                width: 17px;
-                margin: 0px 10px 0px 0;
+            .cover {
+                object-fit: cover;
+                width: 350px;
+
+                @media (min-width: 992px) {
+                    width: 100%;
+                }
             }
         }
-        &__logo {
-            max-width: 200px;
-            width: 100%;
-            @media (max-width: 768px) {
-                display: none;
+        &__text {
+            padding-top: 40px;
+            margin: 0 40px;
+            max-width: 500px;
+            .text {
+                padding: 30px 0 50px 0;
             }
-            & img {
-                width: 100%;
+            .head-small {
+                padding: 10px 0 0 0;
+            }
+            p {
+                font-size: $Fzparagraph;
+                padding-top: 5px;
+                padding-bottom: 10px;
+            }
+            ul {
+                list-style: disc;
+                line-height: 1.3;
+            }
+            .info-list {
+                padding-bottom: 80px;
             }
         }
-        &__social {
-            @include column;
-            align-items: flex-end;
-            text-align: right;
-            .footer__link-social {
-                padding-top: 20px;
-                & img {
-                    margin: 0 2px;
-                    width: 30px;
-                    height: 24px;
-                    opacity: $Opaciti;
+    }
+    .title-courses h4 {
+        font-size: 17pt;
+    }
+}
+    footer {
+        @include violetSection;
+
+        .footer-wrapper {
+            @include row;
+            justify-content: space-between;
+            align-items: center;
+            opacity: $Opaciti;
+
+            & p {
+                font-size: 11pt;
+            }
+
+            &__menu {
+                a {
+                    position: relative;
+                    font-size: 11pt;
+                    margin: 0 10px;
                     transition: $fast-speed;
+
                     &:hover {
-                        opacity: 1;
+                        text-decoration: underline;
                         transition: $fast-speed;
+                        opacity: 1;
+                    }
+                }
+
+                & img {
+                    width: 17px;
+                    margin: 0px 10px 0px 0;
+                }
+            }
+
+            &__logo {
+                max-width: 200px;
+                width: 100%;
+
+                @media (max-width: 768px) {
+                    display: none;
+                }
+
+                & img {
+                    width: 100%;
+                }
+            }
+
+            &__social {
+                @include column;
+                align-items: flex-end;
+                text-align: right;
+
+                .footer__link-social {
+                    padding-top: 20px;
+
+                    & img {
+                        margin: 0 2px;
+                        width: 30px;
+                        height: 24px;
+                        opacity: $Opaciti;
+                        transition: $fast-speed;
+
+                        &:hover {
+                            opacity: 1;
+                            transition: $fast-speed;
+                        }
                     }
                 }
             }
         }
     }
-}

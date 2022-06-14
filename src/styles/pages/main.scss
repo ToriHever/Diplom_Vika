@@ -24,6 +24,11 @@
     @include row;
     justify-content: space-between;
     align-items: center;
+        @media (max-width: 768px) {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
     &__numder {
         @include row;
         justify-content: space-between;
@@ -56,8 +61,13 @@
     a {
         @include link($violet-darck, 13pt, 1);
         margin-right: 10px;
+
         @media (max-width: 1024px) {
             font-size: ($Fzparagraph - 2);
+        }
+
+        @media (max-width: 768px) {
+            max-width: 320px;
         }
         &::before {
             position: absolute;
@@ -78,9 +88,6 @@
     & img {
         width: 17px;
         margin: 0px 10px 0px 0;
-    }
-    @media (max-width: 768px) {
-        display: none;
     }
 }
 .section-info {

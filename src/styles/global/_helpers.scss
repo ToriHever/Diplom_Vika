@@ -54,10 +54,9 @@
 }
 .smoll-text {
     font-size: $FZsmoll;
-    line-height: 1.2;
 }
 .container {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
     @media (max-width: 1400px) {
         margin: 0 50px;

@@ -34,7 +34,6 @@
 }
 @include scrollbars(.4em,slategray);
 
-<<<<<<< HEAD
 @mixin link-social ($TransleteX, $TransleteY){
     .link-social {
         transform: translate($TransleteX, $TransleteY);
@@ -42,15 +41,6 @@
             margin: 0 2px;
             width: 24px;
             height: 24px;
-=======
-@mixin social($translateX, $translateY) {
-    .link-social {
-        transform: translate($translateX,  $translateY);
-        & img {
-            margin: 0 2px;
-            width: 24px;
-            height: 19px;
->>>>>>> page_about
             opacity: $Opaciti;
             transition: $fast-speed;
             &:hover {
@@ -62,18 +52,14 @@
 }
 @mixin text {
     text-align: left;
-    padding: 30px 0;
-    margin: 0 30px;
+    padding: 20px 0;
+    margin: 0 20px;
     .wrapper {
         padding-bottom: 20px;
     }
     .paragraph {
         margin-bottom: $indent;
-<<<<<<< HEAD
         line-height: 1.2;
-=======
-        line-height: 1.1;
->>>>>>> page_about
         font-size: $Fzparagraph;
     }
 }
@@ -103,20 +89,5 @@
 
     &:hover{
         opacity: 1;
-<<<<<<< HEAD
-=======
-    }
-}
-@mixin photoGallery($width, $height) {
-    margin: 30px 0;
-    max-width: $width;
-    width: 100%;
-    max-height: $height;
-    overflow: hidden;
-    box-shadow: 2px 2px 20px 0px $violet-darck5;
-
-    @media (max-width: 768px){
-        margin: 10px 0;
->>>>>>> page_about
     }
 }

@@ -2,6 +2,79 @@
 @import '../global/helpers';
 @import '../global/mixins';
 @import '../global/flex';
-h2 {
-  color: red;
+
+.header{
+    @include violetSection;
+    padding: 20px 0;
+}
+
+.section-intro {
+    @include link-social(-8px, 35px);
+    @include violetSection;
+    padding-top: 50px;
+
+    .wrapper {
+        @include row;
+        align-items: center;
+        max-width: 800px;
+        margin: 0 auto;
+
+        .text{
+            max-width: 350px;
+            width: 100%;
+        }
+
+        .pic-gallery {
+            max-width: 350px;
+            width: 100%;
+            max-height: 570px;
+            overflow: hidden;
+
+            @media (max-width: 768px){
+                display: none;
+            }
+
+            & img {
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+}
+
+.section-gallery{
+    .wrapper{
+        @include row;
+        justify-content: center;
+    }
+    &__inner{
+        margin: 15px;
+
+        @media (max-width: 768px){
+            margin: 5px;
+        }
+        .photo-medium{
+            @include photoGallery(350px, 350px);
+        }
+        .photo-big{
+            @include photoGallery(350px, 460px);
+        }
+        .photo-smoll{
+            @include photoGallery(350px, 230px);
+        }
+        .photo-medium-big{
+            @include photoGallery(350px, 400px);
+        }
+        .photo-extralarge{
+            @include photoGallery(350px, 520px);
+        }
+
+        & img{
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+        }
+
+    }
 }

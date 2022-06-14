@@ -7,20 +7,88 @@
  body {
     background-color: #e3dcd5;
 }
-.button_call-color {
-    @include button_call-color;
-    font-size: $Fzparagraph;
-    @media (max-width: 1024px) {
-        font-size: ($Fzparagraph - 3);
+
+.header{
+    position: fixed;
+    background-color:$light;
+    z-index: 99;
+    padding: 10px 0;
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0px 0px 20px 5px rgb(56, 48, 59, .5);
+}
+
+    .header__content {
+    @include row;
+    justify-content: space-between;
+    align-items: center;
+        @media (max-width: 768px) {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+    &__numder {
+        @include row;
+        justify-content: space-between;
+        align-items: center;
+        @media (max-width: 1024px) {
+            width: 190px;
+        }
+        @media (max-width: 768px) {
+            display: none;
+        }
+        .number {
+            font-size: ($FZsmoll - 1);
+            font-weight: $WBold;
+            margin-right: 10px;
+        }
+    }
+    &__logo-text {
+        font-size: $HeadSmool;
+        @media (max-width: 1024px) {
+            display: none;
+        }
+    }
+    @media (max-width: 1440px) {
+        .number {
+            display: none;
+        }
     }
 }
-.button_call-border {
-    @include button_call-border;
-    font-size: $Fzparagraph;
-    @media (max-width: 1024px) {
-        font-size: ($Fzparagraph - 3);
+.menu {
+    a {
+        @include link($violet-darck, 13pt, 1);
+        margin-right: 10px;
+
+        @media (max-width: 1024px) {
+            font-size: ($Fzparagraph - 2);
+        }
+
+        @media (max-width: 768px) {
+            max-width: 320px;
+        }
+        &::before {
+            position: absolute;
+            bottom: 0;
+            content: "";
+            background: $violet-light4;
+            width: 100%;
+            height: 7px;
+            transform: scaleX(0);
+            z-index: -1;
+            transition: $slow-speed;
+        }
+        &:hover::before {
+            transform: scaleX(1);
+            transition: $slow-speed;
+        }
+    }
+    & img {
+        width: 17px;
+        margin: 0px 10px 0px 0;
     }
 }
+
 //***********************************************
  .head {
     text-align: left;

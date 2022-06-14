@@ -49,6 +49,7 @@
         }
     }
 }
+
 @mixin button_call-color {
     text-align: center;
     position: relative;
@@ -81,5 +82,19 @@
         .icon-phone_border {
             visibility: visible;
         }
+    }
+}
+.button_call-color {
+    @include button_call-color;
+    font-size: $Fzparagraph;
+    @media (max-width: 1024px) {
+        font-size: ($Fzparagraph - 3);
+    }
+}
+.button_call-border {
+    @include button_call-border;
+    font-size: $Fzparagraph;
+    @media (max-width: 1024px) {
+        font-size: ($Fzparagraph - 3);
     }
 }

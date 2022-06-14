@@ -91,3 +91,15 @@
         opacity: 1;
     }
 }
+@mixin photoGallery($width, $height) {
+    margin: 30px 0;
+    max-width: $width;
+    width: 100%;
+    max-height: $height;
+    overflow: hidden;
+    box-shadow: 2px 2px 20px 0px rgb(56, 48, 59, .5);
+
+    @media (max-width: 768px){
+        margin: 10px 0;
+    }
+}

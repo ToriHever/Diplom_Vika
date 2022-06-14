@@ -47,6 +47,10 @@
 }
 .all {
     @include link($violet-light4, $FZsmoll, $Opaciti);
+
+    &:hover{
+        text-decoration: underline;
+    }
 }
 .header {
     padding: 20px 0;

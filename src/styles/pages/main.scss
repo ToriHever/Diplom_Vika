@@ -72,6 +72,7 @@
     }
 }
 .section-info {
+    @include link-social (-7px, 73px);
     margin-bottom: 50px;
     @media (max-width: 1024px) {
         &__wrapper {
@@ -136,20 +137,6 @@
     .slogan {
         font-size: $HeadSmool;
         font-weight: $WBold;
-    }
-    .link-social {
-        transform: translate(-7px, 73pt);
-        & img {
-            margin: 0 2px;
-            width: 24px;
-            height: 24px;
-            opacity: $Opaciti;
-            transition: $fast-speed;
-            &:hover {
-                opacity: 1;
-                transition: $fast-speed;
-            }
-        }
     }
     span {
         display: inline-block;
@@ -535,6 +522,7 @@
 }
 .info {
     @include column;
+    @include link-social (-3px, -40px);
     max-width: 1300px;
     margin: auto;
 
@@ -571,6 +559,7 @@
             }
 
             p {
+                padding-bottom: 80px;
                 line-height: 1.3;
             }
         }

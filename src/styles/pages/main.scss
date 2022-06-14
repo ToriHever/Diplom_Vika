@@ -2,13 +2,25 @@
 @import '../global/helpers';
 @import '../global/mixins';
 @import '../global/flex';
+
 @media (max-width: 1024px) {
     p {
         font-size: ($Fzparagraph - 3);
         line-height: 1.3;
     }
 }
-.header__content {
+
+.header{
+    position: fixed;
+    background-color:$light;
+    z-index: 99;
+    padding: 10px 0;
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0px 0px 20px 5px rgb(56, 48, 59, .5);
+}
+
+    .header__content {
     @include row;
     justify-content: space-between;
     align-items: center;
@@ -74,6 +86,7 @@
 .section-info {
     @include link-social (-7px, 73px);
     margin-bottom: 50px;
+    padding-top: 40px;
     @media (max-width: 1024px) {
         &__wrapper {
             text-align: center;

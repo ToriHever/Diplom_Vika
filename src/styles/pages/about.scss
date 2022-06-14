@@ -9,7 +9,7 @@
 }
 
 .section-intro {
-    @include link-social(-8px, 35px);
+    @include link-social(-8px, 35px, 33px);
     @include violetSection;
     padding-top: 50px;
 

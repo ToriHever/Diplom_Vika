@@ -34,12 +34,12 @@
 }
 @include scrollbars(.4em,slategray);
 
-@mixin link-social ($TransleteX, $TransleteY){
+@mixin link-social ($TransleteX, $TransleteY, $width){
     .link-social {
         transform: translate($TransleteX, $TransleteY);
         & img {
             margin: 0 2px;
-            width: 24px;
+            width: $width;
             height: 24px;
             opacity: $Opaciti;
             transition: $fast-speed;
